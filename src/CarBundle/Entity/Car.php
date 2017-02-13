@@ -5,7 +5,7 @@ namespace CarBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Car
+ * Car Entity
  *
  * @ORM\Table(name="car")
  * @ORM\Entity(repositoryClass="CarBundle\Repository\CarRepository")

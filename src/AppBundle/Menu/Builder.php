@@ -3,6 +3,11 @@
 namespace AppBundle\Menu;
 use Knp\Menu\MenuFactory;
 
+/*
+ * @Description     Using the menu builder to manage easily
+ *                  the urls in the system
+ * @Author          Hibran Martinez <crack.oso@gmail.com>
+ */
 class Builder{
     public function mainMenu(MenuFactory $factory, array $options){
         $menu = $factory->createItem('root');

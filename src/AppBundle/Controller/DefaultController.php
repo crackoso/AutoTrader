@@ -6,6 +6,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+/*
+ * @Description     In this class we can find the Default controllers
+ *                  for the AppBundle
+ * @Author          Hibran Martinez <crack.oso@gmail.com>
+ */
+
 class DefaultController extends Controller
 {
     /**

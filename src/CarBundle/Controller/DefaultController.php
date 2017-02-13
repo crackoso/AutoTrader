@@ -5,6 +5,11 @@ namespace CarBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
+/*
+ * @Description     In this class we can find the Default controllers
+ *                  for the CarBundle
+ * @Author          Hibran Martinez <crack.oso@gmail.com>
+ */
 class DefaultController extends Controller
 {
     /**
