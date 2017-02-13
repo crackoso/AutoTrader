@@ -1,0 +1,12 @@
+{% extends "base.html.twig"%}
+
+{% block title %}
+    {{ car.make }} - {{ car.name }}
+    {{ parent() }}
+{% endblock%}
+{% block body %}
+    <h1>{{ car.name }}</h1>
+    <h3>{{ car.make }}</h3>
+    <p>{{ car.description }}</p>
+    <a href="{{ url('orders') }}">Back</a>
+{% endblock %}

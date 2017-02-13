@@ -17,11 +17,18 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $cars = [
-            ['make' => 'BMW', 'name' => 'X1'],
-            ['make' => 'Honda', 'name' => 'Accord'],
-            ['make' => 'Tesla', 'name' => 'S3'],
-        ];
+        $carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
+        $cars = $carRepository->findAll();
         return $this->render('CarBundle:Default:index.html.twig', ['cars' => $cars]);
+    }
+
+    /**
+     * @param $id
+     * @Route("/{id}", name="show_car")
+     */
+    public function showAction($id){
+        $carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
+        $car = $carRepository->find($id);
+        return $this->render('CarBundle:Default:show.html.twig', ['car' => $car]);
     }
 }

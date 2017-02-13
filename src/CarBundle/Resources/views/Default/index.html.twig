@@ -5,15 +5,17 @@
 {% endblock%}
 {% block body %}
     <h1>Our Offer</h1>
-    <table class="table">
+    <table class="table table-striped table-hover">
         <tr>
             <th>Make</th>
             <th>Name</th>
-        </tr>       
+            <th>Actions</th>
+        </tr>
         {% for car in cars %}
             <tr>
                 <td>{{car.make}}</td>
                 <td>{{car.name}}</td>
+                <td><a href="{{ url('show_car', {id: car.id})}}">Show Details</a></td>
             </tr>
         {% endfor %}
     </table>
