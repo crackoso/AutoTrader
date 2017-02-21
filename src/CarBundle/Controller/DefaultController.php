@@ -25,6 +25,7 @@ class DefaultController extends Controller
     /**
      * @param $id
      * @Route("/{id}", name="show_car")
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showAction($id){
         $carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
