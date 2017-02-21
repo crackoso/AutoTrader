@@ -5,8 +5,7 @@
     {{ parent() }}
 {% endblock%}
 {% block body %}
-    <h1>{{ car.name }}</h1>
-    <h3>{{ car.make }}</h3>
+    <h3>{{ car.name }} {{ car.make }}</h3>
     <p>{{ car.description }}</p>
     <table class="table table">
         <tr>
@@ -18,8 +17,14 @@
             <td>{{ car.year }}</td>
         </tr>
         <tr>
-            <td>Navigation</td>
-            <td>{{ car.navigation }}</td>
+            <td>Navigation System</td>
+            <td>
+                {% if car.navigation %}
+                    <span class="glyphicon glyphicon-ok"></span>
+                {% else %}
+                    <span class="glyphicon glyphicon-remove"></span>
+                {% endif %}
+            </td>
         </tr>
     </table>
     <a href="{{ url('orders') }}">Back</a>
