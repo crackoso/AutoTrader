@@ -51,9 +51,78 @@ class Car
     }
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="price", type="decimal", scale=2)
+     */
+    private $price;
+
+    /**
+     * @return mixed
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param mixed $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * @param mixed $year
+     */
+    public function setYear($year)
+    {
+        $this->year = $year;
+    }
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="year", type="integer")
+     */
+    private $year;
+
+    /**
+     * @return mixed
+     */
+    public function getNavigation()
+    {
+        return $this->navigation;
+    }
+
+    /**
+     * @param mixed $navigation
+     */
+    public function setNavigation($navigation)
+    {
+        $this->navigation = $navigation;
+    }
+
+    /**
+     * @var bool
+     *
+     * @ORM\Column(name="navigation", type="boolean")
+     */
+    private $navigation;
+
+    /**
      * @param string $description
      */
-    public function setDescription(string $description)
+    public function setDescription($description)
     {
         $this->description = $description;
     }
@@ -117,4 +186,3 @@ class Car
         return $this->make;
     }
 }
-

@@ -8,5 +8,19 @@
     <h1>{{ car.name }}</h1>
     <h3>{{ car.make }}</h3>
     <p>{{ car.description }}</p>
+    <table class="table table">
+        <tr>
+            <td>Price</td>
+            <td>{{ car.price }}</td>
+        </tr>
+        <tr>
+            <td>Year</td>
+            <td>{{ car.year }}</td>
+        </tr>
+        <tr>
+            <td>Navigation</td>
+            <td>{{ car.navigation }}</td>
+        </tr>
+    </table>
     <a href="{{ url('orders') }}">Back</a>
 {% endblock %}
