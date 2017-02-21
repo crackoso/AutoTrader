@@ -1,11 +1,11 @@
 {% extends "base.html.twig"%}
 
 {% block title %}
-    {{ car.make }} - {{ car.name }}
+    {{ car.make.name }} - {{ car.model.name }}
     {{ parent() }}
 {% endblock%}
 {% block body %}
-    <h3>{{ car.name }} {{ car.make }}</h3>
+    <h3>{{ car.model.name }} {{ car.make.name }}</h3>
     <p>{{ car.description }}</p>
     <table class="table table">
         <tr>
