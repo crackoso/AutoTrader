@@ -5,6 +5,14 @@
 {% endblock%}
 {% block body %}
     <h1>Our Offer</h1>
+    <div class="pull-right">
+        {{ form_start(form, {attr: {class: 'form-inline'}}) }}
+        {{ form_widget(form.search, {attr: {placeholder: 'Search'}}) }}
+        <button type="submit" class="btn">Search</button>
+        {{ form_errors(form.search) }}
+        {{ form_end(form) }}
+        <br>
+    </div>
     <table class="table table-striped table-hover">
         <tr>
             <th>Make</th>

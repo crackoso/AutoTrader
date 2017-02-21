@@ -4,9 +4,13 @@ namespace CarBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Length;
 
-/**
- * @Description     In this class we can find the Default controllers
+/*
+ *                   In this class we can find the Default controllers
  *                  for the CarBundle
  * @Author          Hibran Martinez <crack.oso@gmail.com>
  */
@@ -16,11 +20,31 @@ class DefaultController extends Controller
      * Look for all the cars
      * @Route("/", name="orders")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $carRepository = $this->getDoctrine()->getRepository('CarBundle:Car');
         $cars = $carRepository->findCarsWithDetails();
-        return $this->render('CarBundle:Default:index.html.twig', ['cars' => $cars]);
+
+        $form = $this->createFormBuilder()
+            ->setMethod('GET')
+            ->add('search', TextType::class, [
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['min' => 2])
+                ]
+            ])
+            ->getForm();
+
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+
+        }
+
+        return $this->render('CarBundle:Default:index.html.twig', [
+            'cars' => $cars,
+            'form' => $form->createView()
+        ]);
     }
 
     /**
