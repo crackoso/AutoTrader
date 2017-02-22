@@ -2,3 +2,8 @@ services:
     car.data_checker:
         class: CarBundle\Service\DataChecker
         arguments: ["@doctrine.orm.entity_manager", "%require_photos_to_promote_car%"]
+    car.command.data_check:
+        class: CarBundle\Command\AbcCheckCarsCommand
+        arguments: ["@car.data_checker", "@doctrine.orm.entity_manager"]
+        tags:
+            - { name: console.command }
