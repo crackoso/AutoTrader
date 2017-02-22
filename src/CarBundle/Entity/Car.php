@@ -120,6 +120,12 @@ class Car
     private $navigation;
 
     /**
+     * @var  boolean
+     * @ORM\Column(name="promote", type="boolean")
+     */
+    private $promote;
+
+    /**
      * @param string $description
      */
     public function setDescription($description)
@@ -185,4 +191,21 @@ class Car
     {
         return $this->model;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getPromote()
+    {
+        return $this->promote;
+    }
+
+    /**
+     * @param mixed $promote
+     */
+    public function setPromote($promote)
+    {
+        $this->promote = $promote;
+    }
+
 }
